@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account</title>
+  <style>
+    body {
+      font-family: Arial;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .container {
+      max-width: 400px;
+      width: 100%;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .terms {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    button {
+      background-color: #cfd9ff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Create Account</h2>
+
+    <label for="region">Region</label>
+    <select id="region">
+      <option value="">Select Region</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+    </select>
+
+    <label for="language">Language</label>
+    <select id="language">
+      <option value="">Select Language</option>
+      <option value="English">English</option>
+      <option value="Hindi">Hindi</option>
+    </select>
+
+    <label for="first">First Name</label>
+    <input type="text" id="first" placeholder="Enter first name" />
+
+    <label for="last">Last Name</label>
+    <input type="text" id="last" placeholder="Enter last name" />
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="human" />
+      <label for="human">I am human</label>
+    </div>
+
+    <p class="terms">
+      By clicking 'Next', I understand and agree to Tesla's 
+      <a href="#">Privacy Notice</a> and 
+      <a href="#">Terms of Use</a>.
+    </p>
+
+    <button onclick="submitForm()">Next</button>
+  </div>
+
+  <script>
+    function submitForm() {
+      const region = document.getElementById("region").value;
+      const language = document.getElementById("language").value;
+      const first = document.getElementById("first").value.trim();
+      const last = document.getElementById("last").value.trim();
+      const isHuman = document.getElementById("human").checked;
+
+      if (!region || !language || !first || !last || !isHuman) {
+        alert("Please fill all fields and confirm you're human.");
+        return;
+      }
+
+      alert("Account Login Successful ✅");
+    }
+  </script>
+
+</body>
+</html>

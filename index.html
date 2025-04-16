@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tesla Homepage Clone</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: white;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-center {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      padding: 10px;
+      display: block;
+    }
+
+    .right-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .right-icons a {
+      font-size: 20px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      min-width: 300px;
+      z-index: 999;
+    }
+
+    nav ul li:hover .dropdown-content {
+      display: block;
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .vehicle {
+      text-align: center;
+    }
+
+    .vehicle img {
+      width: 100px;
+      height: auto;
+    }
+
+    .vehicle p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .dropdown-content a {
+      display: block;
+      text-align: left;
+      margin: 8px 0;
+      font-weight: normal;
+    }
+
+    .hero {
+      background: url('https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      padding-top: 80px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .buttons .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      margin: 10px;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .order {
+      background: black;
+      color: white;
+    }
+
+    .learn {
+      background: white;
+      color: black;
+      border: 2px solid black;
+    }
+
+    footer {
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    footer ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    footer ul li {
+      margin: 0 15px;
+    }
+
+    footer ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">TESLA</div>
+
+    <div class="nav-center">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Vehicles</a>
+            <div class="dropdown-content">
+              <div class="vehicle-grid">
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg" alt="Model S">
+                  <p>Model S</p>
+                </div>
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/modelsx-new/social/model-3-hero-social.jpg" alt="Model 3">
+                  <p>Model 3</p>
+                </div>
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/modelsx-new/social/model-x-hero-social.jpg" alt="Model X">
+                  <p>Model X</p>
+                </div>
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/modelsx-new/social/model-y-hero-social.jpg" alt="Model Y">
+                  <p>Model Y</p>
+                </div>
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/images/blogs/tesla-used-inventory.jpg" alt="Used Inventory">
+                  <p>Used Cars</p>
+                </div>
+                <div class="vehicle">
+                  <img src="https://www.tesla.com/sites/default/files/blog_images/cybertruck.jpg" alt="Cybertruck">
+                  <p>Cybertruck</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#">Energy</a>
+            <div class="dropdown-content">
+              <a href="#">Solar Panels</a>
+              <a href="#">Solar Roof</a>
+              <a href="#">Powerwall</a>
+              <a href="#">Megapack</a>
+            </div>
+          </li>
+          <li>
+            <a href="#">Charging</a>
+            <div class="dropdown-content">
+              <a href="#">Home Charging</a>
+              <a href="#">Supercharging</a>
+              <a href="#">Charging Locations</a>
+            </div>
+          </li>
+          <li>
+            <a href="#">Discover</a>
+            <div class="dropdown-content">
+              <a href="#">About Tesla</a>
+              <a href="#">Investor Relations</a>
+              <a href="#">Events</a>
+            </div>
+          </li>
+          <li>
+            <a href="#">Shop</a>
+            <div class="dropdown-content">
+              <a href="#">Apparel</a>
+              <a href="#">Accessories</a>
+              <a href="#">Lifestyle</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="right-icons">
+      <a href="search.html">🔍</a>
+      <a href="account.html">👤</a>
+      <a href="menu.html">☰</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Experience the Future of Driving</h2>
+      <p>Order your Tesla today.</p>
+      <div class="buttons">
+        <a class="btn order" onclick="window.open('https://www.tesla.com/modely/design', '_blank')">Order Now</a>
+        <a class="btn learn" onclick="window.open('https://www.tesla.com/models', '_blank')">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="privacy.html">Privacy & Legal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="news.html">News</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
+
